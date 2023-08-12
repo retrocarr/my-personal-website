@@ -1,27 +1,64 @@
-import { ShapedDiv } from "./lib/ShapedDiv/ShapedDiv";
+import { ShapedDiv } from "./lib/ShapedDiv";
 import { Bg } from "./bg";
 import { path1, path2, path3 } from "./paths";
-import './App.scss'
-import { AnimatedPath } from "./lib/ShapedDiv/AnimatedPath";
+import { AnimatedPath } from "./lib/AnimatedPath";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { BsBoxArrowUpRight } from "react-icons/bs";
+import { GiLetterBomb } from "react-icons/gi";
+import { BsFillFilePdfFill } from "react-icons/bs";
 
-/** todo: list
- *  1-try deploying 
- *  2-font sizes
- *  3-
- */ 
+import ss from "./assets/SS.png";
+import bb from "./assets/BB.png";
+import pdf from "../Resume.pdf";
 
+import './scss/App.scss'
+import './scss/sizes.scss'
+import './scss/colors.scss'
+import './scss/trapezoid.scss'
+import './scss/scroll.scss'
+import './scss/paths.scss'
+import { useState } from "react";
+
+/** todo list
+ * todo: links to github...
+ * todo: redraw paths 
+ * todo: disable bg for firefox
+ * 
+ * after deploy
+ * todo: svg scroll bar 
+ */
+
+
+var WebsiteLink = ({ href }: { href: string }) => <a href={href} target="_blank" title="Visit website"><BsBoxArrowUpRight /></a>
+var GithubLink = ({ href }: { href: string }) => <a href={href} target="_blank" title="Visit github repo"><RiGitRepositoryLine /></a>
+
+function Trapizoid({ children }: { children: React.ReactNode }) {
+  const config = {
+    width: "default",
+    height: "510px",
+    className: "trapezoid",
+
+    bgShape: "polygon(0 0, 100% 0, 100% 40%, 0 100%)",
+    afterShape: "polygon(92.14% 204px, 100% 0px, 100% 100%, 1px 100.83%, 0.64% 94.85%);",
+
+    shapeMargin: "1em",
+    padding: ".5em",
+    bgColor: "#333",
+
+    backgroundStyle: { background: '#33333390', backdropFilter: 'blur(2px)' },
+  };
+  return <ShapedDiv {...config}>{children}</ShapedDiv>
+}
 
 function App() {
 
+  const color = '99'
   return <main>
 
-    <Bg />
+    <Bg strokeColor={`#${color.repeat(3)}`} />
 
-    <ShapedDiv width="default" height="510px" bgShape="polygon(0 0, 100% 0, 100% 40%, 0 100%)"
-      afterShape="polygon(92.14% 204px, 100% 0px, 100% 100%, 1px 100.83%, 0.64% 94.85%);"
-      shapeMargin="1em" padding=".5em" bgColor="#333"
-      className="trapezoid"
-    >
+    <Trapizoid>
+
       <h1 className="trapizoidH1">Hi. im murtatha</h1>
       <p className="trapizoidP">
         Self-taught full-stack web developer with 3+ years of experience
@@ -30,20 +67,48 @@ function App() {
       </p>
 
       <div className="links">
-        <a>Experience</a>
-        <a>Contact</a>
-        <a>About</a>
+        <a href={pdf}>resume <BsFillFilePdfFill style={{ color: 'red' }} /></a>
+        <a className="contactAnchor" href="mailto:murtathaalnajjar@gmail.com">
+          Contact <GiLetterBomb style={{ color: 'red' }} />
+        </a>
+        <a></a>
       </div>
 
-    </ShapedDiv>
+    </Trapizoid>
 
     {/* todo: redraw svgs to have circles on both ends. only leave the last one  */}
-    <AnimatedPath d={path1} className="shape-1" />
-    <AnimatedPath d={path2} className="shape-2" />
-    <AnimatedPath d={path3} className="shape-3" width={'50px'} style={{border: '2px solid tomato'}}/>
+    <AnimatedPath d={path1.d} className="shape-1" viewbox={path1.viewbox} preserveAspectRatio="none" />
+    <AnimatedPath d={path2.d} className="shape-2" viewbox={path2.viewbox} preserveAspectRatio="none" />
+    <AnimatedPath d={path3.d} className="shape-3" viewbox={path3.viewbox} preserveAspectRatio="none" />
 
+    <section className="scroll">
+      <h1 style={{ fontSize: '2.5em', textAlign: 'center' }}>
+        ---------------------- Projects --------------------</h1>
 
-    <section className="scroll"></section>
+      <div className="projectCon">
+        <img src={ss} alt="image of the main page" height='100' />
+        <div>
+          <h2>Social sphere
+            <WebsiteLink href="https://social-sphere-one.vercel.app" />
+            <GithubLink href="https://github.com/retrocarr/Social-Sphere-mantine-template-" />
+          </h2>
+          <p>social sphere is a little social media app i made from scratch
+            with liking, following and commenting functionality.
+          </p>
+        </div>
+      </div>
+
+      <div className="projectCon">
+        <img src={bb} alt="image of the main page" height='100' />
+        <div>
+          <h2>Hospital App
+            <WebsiteLink href="https://border-control-66718.web.app/" />
+          </h2>
+          <p>my first full-stack project. single page using the google maps api. </p>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 

@@ -1,0 +1,18 @@
+.contactBtn {
+  background: transparent;
+  border: transparent;
+  font-size: 1em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.links {
+  @media (width < 1900px) {
+    rotate: none;
+    bottom: 0;
+    display: grid;
+    justify-content: end;
+    gap: .5em;
+  }
+}

@@ -19,6 +19,7 @@ export function Bg({ width=300, height=300, fadeColor='#ffffff30', strokeColor="
     // #region config 🛠️
     if (ctx.current) {
       const c = ctx.current
+      c.setLineDash([10,10])
       c.fillStyle = fadeColor
       c.strokeStyle = strokeColor
       c.lineWidth = 1 || strokeWidth

@@ -7,7 +7,7 @@ import React from "react";
 export function ShapedDiv({
   children, bgShape, beforeShape, afterShape, bgColor,
   highlightOutsideShapes, width, height, shapeMargin,
-  padding, style, className
+  padding, style, className, backgroundStyle
 }: {
   children: React.ReactNode
   bgShape: string
@@ -21,6 +21,7 @@ export function ShapedDiv({
   padding?: string
   style?: React.CSSProperties
   className?: string
+  backgroundStyle?: React.CSSProperties
 }) {
 
   const bShape = beforeShape || ''
@@ -63,7 +64,7 @@ export function ShapedDiv({
 
   return <>
     <div className={`${containerStyle} ${className}`} style={{ padding, ...style }}>
-      <span className={bgStyle} />
+      <span className={bgStyle} style={backgroundStyle} />
       {beforeShape && <div className={`${beforeStyle} ${BandA}`} />}
       {afterShape && <div className={`${afterStyle} ${BandA}`} />}
       {children}

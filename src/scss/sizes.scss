@@ -1,0 +1,37 @@
+.trapezoid {
+  position: relative;
+  color: white;
+
+  a {
+    color: black;
+  }
+
+  h1 {
+    padding-top: .5em;
+    padding-left: .3em;
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.6em;
+    padding-top: 5%;
+    padding-left: .6em;
+    line-height: 1.5em;
+  }
+}
+
+.links {
+  position: absolute;
+  font-size: 3em;
+  $spacing: 10%;
+  rotate: -33deg;
+  min-width: 500px;
+  right: 0;
+  bottom: 20%;
+  display: flex;
+  justify-content: space-between;
+
+  a:hover {
+    cursor: pointer;
+  }
+}

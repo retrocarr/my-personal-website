@@ -1,0 +1,26 @@
+
+.scroll {
+  border: 3px dashed #333;
+  backdrop-filter: blur(2px);
+  padding: 1em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+}
+
+.projectCon {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  background: #33333320;
+  padding: 0 1.5em;
+  gap: 1em;
+
+  p {font-size: 1.2em;}
+  a{ color: black; }
+  h2 {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+  }
+}
