@@ -1,0 +1,19 @@
+svg.intro {
+  position: absolute;
+  inset: 0;
+  width:  100dvw;
+  height: 100dvh;
+  z-index: 1000;
+
+  fill: none; stroke: black;
+  animation: whirly .6s forwards ease-out;
+  stroke-width: 60;
+}
+
+
+@keyframes whirly {
+  to {
+    stroke-width: 0;
+    display: none;
+  }
+}

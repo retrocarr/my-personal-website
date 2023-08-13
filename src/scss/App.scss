@@ -16,7 +16,7 @@ main {
 
 .scroll {
   grid-row: 2/4;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .shape-3 {display: none;}
@@ -63,6 +63,7 @@ a {
   gap: .3em;
   text-decoration: none;
 }
+
 
 
 
