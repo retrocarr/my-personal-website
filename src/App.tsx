@@ -13,7 +13,6 @@ import sw from "./assets/SW.jpg";
 import pdf from "../Resume.pdf";
 
 import './scss/App.scss'
-import './scss/sizes.scss'
 import './scss/intro.scss'
 import './scss/colors.scss'
 import './scss/trapezoid.scss'
@@ -72,7 +71,7 @@ function App() {
       <p className="trapizoidP">
         Self-taught full-stack web developer with 3+ years of experience
         based in turkey activley looking for a role in the industry. please
-        do contact me if you like my work. Thanks
+        do contact me if you like my work. Thanks.
       </p>
 
       <div className="links">

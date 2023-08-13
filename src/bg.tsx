@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react"
 
-export function Bg({ width=300, height=300, fadeColor='#ffffff30', strokeColor="#333", strokeWidth }: {
+export function Bg({ width = 300, height = 300, fadeColor = '#ffffff30', strokeColor = "#333", strokeWidth }: {
   width?: number
   height?: number
   fadeColor?: string
   strokeColor?: string
-  strokeWidth?:number
+  strokeWidth?: number
 }) {
   const canvasRef = useRef<any>(null)
   const ctx = useRef<CanvasRenderingContext2D | null>(null)
@@ -19,7 +19,7 @@ export function Bg({ width=300, height=300, fadeColor='#ffffff30', strokeColor="
     // #region config 🛠️
     if (ctx.current) {
       const c = ctx.current
-      c.setLineDash([10,10])
+      c.setLineDash([10, 10])
       c.fillStyle = fadeColor
       c.strokeStyle = strokeColor
       c.lineWidth = 1 || strokeWidth
@@ -44,7 +44,7 @@ export function Bg({ width=300, height=300, fadeColor='#ffffff30', strokeColor="
       const imgUrl = canvasRef.current.toDataURL()
       document.body.style.backgroundImage = `url('${imgUrl}')`
     }
-    const setBg = setInterval(() => { setBodyBg() },20);
+    const setBg = setInterval(() => { setBodyBg() }, 20);
     // #endregion
 
     // #region clean up 🧼
@@ -85,7 +85,7 @@ export function Bg({ width=300, height=300, fadeColor='#ffffff30', strokeColor="
   return <canvas ref={canvasRef}
     width={canvwidth.current}
     height={canvheight.current}
-    style={{ opacity: '0%', position:'absolute' }}
+    style={{ display: 'none', position: 'absolute' }}
   />
 
 }
