@@ -45,9 +45,9 @@ function Trapizoid({ children }: { children: React.ReactNode }) {
 
     shapeMargin: "1em",
     padding: ".5em",
-    bgColor: "#333",
+    bgColor: "#33333350",
 
-    backgroundStyle: { background: '#33333390', backdropFilter: 'blur(2px)' },
+    backgroundStyle: { background: 'linear-gradient(#333333cc, #ddd)', backdropFilter: 'blur(2px)' },
   };
   return <ShapedDiv {...config}>{children}</ShapedDiv>
 }
@@ -63,11 +63,13 @@ function AnimatedIntro() {
 function App() {
 
   const color = '99'
+
   return <>
     <main>
 
       <AnimatedIntro />
-      <Bg strokeColor={`#${color.repeat(3)}`} />
+      {window.innerWidth > 900 &&
+        <Bg strokeColor={`#${color.repeat(3)}`} />}
 
       <Trapizoid>
 
@@ -137,8 +139,8 @@ function App() {
 
     </main>
     <div className="socials">
-      <a style={{color:'#333'}} target="_blank" href="https://github.com/retrocarr"><AiFillGithub /></a>
-      <a style={{color:'#0b66c2'}} target="_blank" href="https://linkedin.com/in/murtatha-alnajjar"><AiFillLinkedin /></a>
+      <a style={{ color: '#333' }} target="_blank" href="https://github.com/retrocarr"><AiFillGithub /></a>
+      <a style={{ color: '#0b66c2' }} target="_blank" href="https://linkedin.com/in/murtatha-alnajjar"><AiFillLinkedin /></a>
     </div>
   </>
 
