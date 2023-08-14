@@ -24,3 +24,17 @@
     align-items: center;
   }
 }
+
+.projectsHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &::before, &::after {
+    content: '';
+    display: block;
+    margin: .5em;
+    width:  45%;
+    height: 10px;
+    border-bottom: 3px dashed black;
+  }
+}

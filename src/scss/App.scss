@@ -7,14 +7,13 @@ body {
 
 main {
   max-width: 1900px;
-  max-height: 1050px;
   // width:  min(100%, 1900px);
   // height: min(100vh, 1050px);
   display: grid;
   grid-auto-flow: column;
   gap: 1em;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: .5fr 1fr 1fr;
+  grid-template-rows: .5fr 1.2fr 1fr;
 }
 
 .trapezoid {

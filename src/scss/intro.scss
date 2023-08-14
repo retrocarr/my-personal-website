@@ -1,19 +1,24 @@
 svg.intro {
   position: absolute;
   inset: 0;
-  width:  100dvw;
+  width: 100dvw;
   height: 100dvh;
   z-index: 1000;
 
-  fill: none; stroke: black;
-  animation: whirly .6s forwards ease-out;
-  stroke-width: 60;
+  fill: none;
+  stroke: black;
+  animation: whirly .5s forwards ease-in;
+  stroke-width: 55;
+
+  stroke-dasharray: 912.901;
+  stroke-dashoffset: 0;
 }
 
 
 @keyframes whirly {
   to {
-    stroke-width: 0;
+    stroke-width: 40;
+    stroke-dashoffset: 912.901;
     display: none;
   }
 }
