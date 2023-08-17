@@ -130,7 +130,7 @@ function App() {
               <WebsiteLink href="https://still-waters.vercel.app" />
               <GithubLink href="https://github.com/retrocarr/Still-Waters" />
             </h2>
-            <p>Responsive landing page layout</p>
+            <p>Responsive landing page layout.</p>
           </div>
         </div>
 
