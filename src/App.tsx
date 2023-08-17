@@ -31,6 +31,9 @@ import './scss/socials.scss'
  */
 
 
+/** 
+ * !usecount:5
+ */
 var WebsiteLink = ({ href }: { href: string }) => <a href={href} target="_blank" title="Visit website"><BsBoxArrowUpRight /></a>
 var GithubLink = ({ href }: { href: string }) => <a href={href} target="_blank" title="Visit github repo"><RiGitRepositoryLine /></a>
 
@@ -76,7 +79,7 @@ function App() {
 
         <h1 className="trapizoidH1">Hi. im murtatha</h1>
         <p className="trapizoidP">
-          Self-taught full-stack web developer with 3+ years of experience
+          Self-taught front-end web developer with 3+ years of experience
           based in turkey activley looking for a role in the industry. please
           do contact me if you like my work. Thanks.
         </p>
