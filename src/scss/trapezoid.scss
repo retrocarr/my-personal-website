@@ -1,6 +1,6 @@
 .trapezoid {
   position: relative;
-  color: rgb(255, 255, 255);
+  color: white;
 
   a {
     color: black;
@@ -21,6 +21,10 @@
     line-height: 1.5em;
     @media (width < 1900px) { font-size: clamp(21px, 2dvw, 28px); }
     @media (width < 500px) { font-size: 4.7dvw; }
+    $s1: -1px;
+    $s2:  1px;
+    $col: #333;
+    text-shadow: $s1 $s1 0 $col, $s2 $s1 0 $col, $s1 $s2 0 $col, $s2 $s2 0 $col;
   }
 }
 
