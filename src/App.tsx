@@ -15,7 +15,6 @@ import pdf from "../Resume.pdf";
 
 import './scss/App.scss'
 import './scss/intro.scss'
-import './scss/colors.scss'
 import './scss/trapezoid.scss'
 import './scss/scroll.scss'
 import './scss/paths.scss'

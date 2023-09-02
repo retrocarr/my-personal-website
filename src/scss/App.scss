@@ -3,7 +3,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: 10%;
+  background-repeat: round;
+  animation: tripmode 90s infinite linear;
+  animation-delay: .8s;
 }
+
+@keyframes tripmode {
+  from {
+    background-position: top;
+  }
+  to {
+    background-position: bottom;
+  }
+}
+
 
 main {
   max-width: 1900px;
